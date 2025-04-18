@@ -39,7 +39,7 @@ module.exports = {
         addCmd = 'add';
       } else if (isNpmAvailable()) {
         packageManager = 'npm';
-        addCmd = 'install';
+        addCmd = 'install --legacy-peer-deps';
       }
 
       if (!packageManager) {
