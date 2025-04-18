@@ -39,7 +39,7 @@ module.exports = {
         addCmd = 'add';
       } else if (isNpmAvailable()) {
         packageManager = 'npm';
-        addCmd = 'install --legacy-peer-deps';
+        addCmd = 'install';
       }
 
       if (!packageManager) {
@@ -55,7 +55,7 @@ module.exports = {
         console.log('📦 Loading the build tool...');
         const installTypeScriptCmd = spawnSync(
           packageManager,
-          [addCmd, '-D', `typescript@${TYPESCRIPT_VERSION}`],
+          [addCmd, '-D', '--legacy-peer-deps', `typescript@${TYPESCRIPT_VERSION}`],
           { stdio: 'inherit' },
         );
         if (installTypeScriptCmd.error) {
