@@ -80,9 +80,13 @@ module.exports = {
 
           console.log('♻️  Replacing source...');
           execSync('rm -rf src', { stdio: 'pipe' });
+          console.log('1');
           execSync('cp -R js/src ./src', { stdio: 'pipe' });
+          console.log('2');
           execSync('rm -rf __mocks__', { stdio: 'pipe' });
+          console.log('3');
           execSync('cp -R js/__mocks__ ./__mocks__', { stdio: 'pipe' });
+          console.log('4');
           execSync('rm -rf js', { stdio: 'pipe' });
         } catch {
           console.error(
